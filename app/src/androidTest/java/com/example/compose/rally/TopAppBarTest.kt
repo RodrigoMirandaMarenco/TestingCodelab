@@ -45,4 +45,18 @@ class TopAppBarTest {
             )
             .assertExists()
     }
+
+    @Test
+    fun rallyTopAppBarClickTest() {
+        composeTestRule.setContent {
+            RallyTheme {
+                RallyApp()
+            }
+        }
+
+        composeTestRule
+            .onNodeWithContentDescription(RallyScreen.Bills.name)
+            .performClick()
+            .assertIsSelected()
+    }
 }
