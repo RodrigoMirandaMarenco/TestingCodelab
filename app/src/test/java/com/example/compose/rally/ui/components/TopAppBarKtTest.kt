@@ -24,18 +24,6 @@ class TopAppBarKtTest {
 
     @Test
     fun rallyTopAppBarClickTest() {
-        composeTestRule.setContent {
-            RallyApp()
-        }
-
-        composeTestRule
-            .onNodeWithContentDescription(RallyScreen.Bills.name)
-            .performClick()
-            .assertIsSelected()
-
-        composeTestRule
-            .onNodeWithContentDescription(RallyScreen.Accounts.name)
-            .performClick()
-            .assertIsSelected()
+        TopAppBarSharedTest.clickTest(composeTestRule)
     }
 }
