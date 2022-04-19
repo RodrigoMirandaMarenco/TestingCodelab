@@ -91,6 +91,15 @@ android {
     }
 }
 
+android.sourceSets {
+    test {
+        java.srcDirs += "$projectDir/src/sharedTest/java"
+    }
+    androidTest {
+        java.srcDirs += "$projectDir/src/sharedTest/java"
+    }
+}
+
 dependencies {
 
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
