@@ -3,6 +3,7 @@ package com.example.compose.rally
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import com.example.compose.rally.ui.components.RallyTopAppBar
+import com.example.compose.rally.ui.components.TopAppBarSharedTest
 import com.example.compose.rally.ui.theme.RallyTheme
 import org.junit.Rule
 import org.junit.Test
@@ -48,15 +49,6 @@ class TopAppBarTest {
 
     @Test
     fun rallyTopAppBarClickTest() {
-        composeTestRule.setContent {
-            RallyTheme {
-                RallyApp()
-            }
-        }
-
-        composeTestRule
-            .onNodeWithContentDescription(RallyScreen.Bills.name)
-            .performClick()
-            .assertIsSelected()
+        TopAppBarSharedTest.clickTest(composeTestRule)
     }
 }
